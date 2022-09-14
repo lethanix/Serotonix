@@ -14,6 +14,7 @@
 		E4B7E42928D1758600C69D4E /* SerotonixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7E42828D1758600C69D4E /* SerotonixTests.swift */; };
 		E4B7E43328D1758600C69D4E /* SerotonixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7E43228D1758600C69D4E /* SerotonixUITests.swift */; };
 		E4B7E43528D1758600C69D4E /* SerotonixUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7E43428D1758600C69D4E /* SerotonixUITestsLaunchTests.swift */; };
+		E4B7E44328D1760800C69D4E /* Pexel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7E44228D1760800C69D4E /* Pexel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E4B7E42E28D1758600C69D4E /* SerotonixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SerotonixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B7E43228D1758600C69D4E /* SerotonixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerotonixUITests.swift; sourceTree = "<group>"; };
 		E4B7E43428D1758600C69D4E /* SerotonixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerotonixUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E4B7E44228D1760800C69D4E /* Pexel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pexel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				E4B7E41728D1758500C69D4E /* SerotonixApp.swift */,
+				E4B7E44528D177DC00C69D4E /* Models */,
+				E4B7E44128D175F300C69D4E /* ViewModels */,
 				E4B7E41928D1758500C69D4E /* ContentView.swift */,
 				E4B7E41B28D1758600C69D4E /* Assets.xcassets */,
 				E4B7E41D28D1758600C69D4E /* Preview Content */,
@@ -125,6 +129,21 @@
 				E4B7E43428D1758600C69D4E /* SerotonixUITestsLaunchTests.swift */,
 			);
 			path = SerotonixUITests;
+			sourceTree = "<group>";
+		};
+		E4B7E44128D175F300C69D4E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		E4B7E44528D177DC00C69D4E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E4B7E44228D1760800C69D4E /* Pexel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B7E44328D1760800C69D4E /* Pexel.swift in Sources */,
 				E4B7E41A28D1758500C69D4E /* ContentView.swift in Sources */,
 				E4B7E41828D1758500C69D4E /* SerotonixApp.swift in Sources */,
 			);
