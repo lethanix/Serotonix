@@ -134,3 +134,4 @@ iOSInjectionProject/
 #
 # Ignore config files
 *.xcconfig
+*/*.xcconfig
