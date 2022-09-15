@@ -9,12 +9,22 @@ import SwiftUI
 
 struct ContentView: View {
 	var body: some View {
+		let requestTest = PexelRequestBuilder()
+			.search(for: "Nature", "Bear")
+			.perPage(1)
+			.build()
 		NavigationView {
 			VStack {
 				Image(systemName: "globe")
 					.imageScale(.large)
 					.foregroundColor(.accentColor)
 				Text("Hello, world!")
+
+				Button(action: {
+					print("Testing the API")
+					requestTest.displayRequest()
+					requestTest.fetch()
+				}) { Text("Try the API") }
 			}
 			.padding()
 			.navigationTitle("Serotonix")

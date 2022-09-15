@@ -7,115 +7,55 @@
 
 import Foundation
 
-// MARK: - Useful enums
+// MARK: - Photo Resource
 
-enum Content: String {
-	case image = "https://api.pexels.com/v1/"
-	case video = "https://api.pexels.com/videos/"
-}
+/// Response of a search for photos
+struct PhotoCollection: Codable {
+	let page, perPage: Int
+	let photos: [Photo]
+	let totalResults: Int
+	let nextPage: String
 
-enum Orientation: String { case landscape, portrait, square }
-enum Size: String { case large, medium, small }
-
-// MARK: - Request
-
-class PexelRequest {
-	public private(set) var request: URL?
-	
-	init(request: URL? = nil) {
-		self.request = request
-	}
-	
-	func displayRequest() {
-		if let request {
-			print("The Pexel Request URL is: \(request)")
-		} else {
-			print("No Pexel Request URL found")
-		}
+	enum CodingKeys: String, CodingKey {
+		case page
+		case perPage = "per_page"
+		case photos
+		case totalResults = "total_results"
+		case nextPage = "next_page"
 	}
 }
 
-// MARK: - Query Builder
+// MARK: - Photo
 
-class PexelRequestBuilder {
-	enum PexelRequestBuilderError: Error {
-		case multipleSearchMethods
-	}
-	
-	// MARK: - Private variables
-	
-	/// Determines if the search method was called before.
-	/// `search(for:)` method must be used once.
-	//	private var queryDefined = false
-	//	private var query = String() {
-	//		didSet {
-	//			self.queryDefined = true
-	//		}
-	//	}
-	
-	private var query = String()
-	private var baseURL = String()
-	
-	// Optional values
-	private var orientation: Orientation?
-	private var size: Size?
-	private var locale: String?
-	private var page: Int?
-	private var perPage: Int?
-	
-	// Aux variables
-	private var searchURL = String()
-	private var optSearchURL = String()
-	
-	// MARK: - Methods
-	
-	// TODO: Verify that each method is used only once
-	func contentType(_ content: Content) -> PexelRequestBuilder {
-		baseURL = content.rawValue
-		return self
-	}
-	
-	/// Search for multiple keywords
-	/// - Parameter queries: Array of keywords (strings)
-	/// - Returns: Query Builder
-	func search(for keywords: String...) -> PexelRequestBuilder {
-		//		if self.queryDefined {
-		//			throw PexelRequestBuilderError.multipleSearchMethods
-		//		}
-		
-		for word in keywords {
-			query.append("\(word)+")
-		}
-		return self
-	}
-	
-	func with(orientation: Orientation) -> PexelRequestBuilder {
-		self.orientation = orientation
-		optSearchURL.append("&orientation=\(orientation.rawValue)")
-		return self
-	}
-	
-	func with(size: Size) -> PexelRequestBuilder {
-		self.size = size
-		optSearchURL.append("&size=\(size.rawValue)")
-		return self
-	}
-	
-	func language(locale: String) -> PexelRequestBuilder {
-		self.locale = locale
-		optSearchURL.append("&locale=\(locale)")
-		return self
-	}
-	
-	func build() -> PexelRequest {
-		self.searchURL.append(baseURL)
-		self.searchURL.append("search?")
-		self.searchURL.append("query=\(query)")
-		
-		self.searchURL.append(optSearchURL)
-		
-		let searchURL = URL(string: self.searchURL)
-		return PexelRequest(request: searchURL)
+struct Photo: Codable {
+	let id, width, height: Int
+	let url: String
+	let photographer: String
+	let photographerURL: String
+	let photographerID: Int
+	let avgColor: String
+	let src: Src
+	let liked: Bool
+	let alt: String
+
+	enum CodingKeys: String, CodingKey {
+		case id, width, height, url, photographer
+		case photographerURL = "photographer_url"
+		case photographerID = "photographer_id"
+		case avgColor = "avg_color"
+		case src, liked, alt
 	}
 }
 
+// MARK: - Src
+
+struct Src: Codable {
+	let original, large2X, large, medium: String
+	let small, portrait, landscape, tiny: String
+
+	enum CodingKeys: String, CodingKey {
+		case original
+		case large2X = "large2x"
+		case large, medium, small, portrait, landscape, tiny
+	}
+}

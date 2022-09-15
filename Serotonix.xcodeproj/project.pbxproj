@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40FE4FB28D2B535004D4296 /* PexelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4FA28D2B535004D4296 /* PexelRequest.swift */; };
+		E40FE4FD28D3049E004D4296 /* PexelRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40FE4FC28D3049E004D4296 /* PexelRequestBuilder.swift */; };
 		E4B7E41828D1758500C69D4E /* SerotonixApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7E41728D1758500C69D4E /* SerotonixApp.swift */; };
 		E4B7E41A28D1758500C69D4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B7E41928D1758500C69D4E /* ContentView.swift */; };
 		E4B7E41C28D1758600C69D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B7E41B28D1758600C69D4E /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E40FE4FA28D2B535004D4296 /* PexelRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelRequest.swift; sourceTree = "<group>"; };
+		E40FE4FC28D3049E004D4296 /* PexelRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PexelRequestBuilder.swift; sourceTree = "<group>"; };
 		E4B7E41428D1758500C69D4E /* Serotonix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Serotonix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B7E41728D1758500C69D4E /* SerotonixApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerotonixApp.swift; sourceTree = "<group>"; };
 		E4B7E41928D1758500C69D4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		E4B7E43228D1758600C69D4E /* SerotonixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerotonixUITests.swift; sourceTree = "<group>"; };
 		E4B7E43428D1758600C69D4E /* SerotonixUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerotonixUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E4B7E44228D1760800C69D4E /* Pexel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pexel.swift; sourceTree = "<group>"; };
+		E4B7E44728D28D2800C69D4E /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		E4B7E44828D2991200C69D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,10 +82,10 @@
 		E4B7E40B28D1758400C69D4E = {
 			isa = PBXGroup;
 			children = (
+				E4B7E41528D1758500C69D4E /* Products */,
 				E4B7E41628D1758500C69D4E /* Serotonix */,
 				E4B7E42728D1758600C69D4E /* SerotonixTests */,
 				E4B7E43128D1758600C69D4E /* SerotonixUITests */,
-				E4B7E41528D1758500C69D4E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,7 +102,9 @@
 		E4B7E41628D1758500C69D4E /* Serotonix */ = {
 			isa = PBXGroup;
 			children = (
+				E4B7E44828D2991200C69D4E /* Info.plist */,
 				E4B7E41728D1758500C69D4E /* SerotonixApp.swift */,
+				E4B7E44728D28D2800C69D4E /* Config.xcconfig */,
 				E4B7E44528D177DC00C69D4E /* Models */,
 				E4B7E44128D175F300C69D4E /* ViewModels */,
 				E4B7E41928D1758500C69D4E /* ContentView.swift */,
@@ -142,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				E4B7E44228D1760800C69D4E /* Pexel.swift */,
+				E40FE4FA28D2B535004D4296 /* PexelRequest.swift */,
+				E40FE4FC28D3049E004D4296 /* PexelRequestBuilder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,6 +286,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E40FE4FD28D3049E004D4296 /* PexelRequestBuilder.swift in Sources */,
+				E40FE4FB28D2B535004D4296 /* PexelRequest.swift in Sources */,
 				E4B7E44328D1760800C69D4E /* Pexel.swift in Sources */,
 				E4B7E41A28D1758500C69D4E /* ContentView.swift in Sources */,
 				E4B7E41828D1758500C69D4E /* SerotonixApp.swift in Sources */,
@@ -317,6 +329,7 @@
 /* Begin XCBuildConfiguration section */
 		E4B7E43628D1758600C69D4E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4B7E44728D28D2800C69D4E /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -440,6 +453,7 @@
 				DEVELOPMENT_TEAM = 3GB4PRBCNM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Serotonix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -469,6 +483,7 @@
 				DEVELOPMENT_TEAM = 3GB4PRBCNM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Serotonix/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
